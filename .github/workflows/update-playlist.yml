@@ -1,0 +1,166 @@
+name: Update IPTV playlist
+
+on:
+  schedule:
+    # 01:23 UTC = 08:23 Vietnam time (UTC+7)
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-htv-iptv-playlist
+  cancel-in-progress: false
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download the four upstream playlists
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 5 \
+            "https://iptv-org.github.io/iptv/countries/vn.m3u" -o /tmp/vn.m3u
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 5 \
+            "https://iptv-org.github.io/iptv/categories/sports.m3u" -o /tmp/sports.m3u
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 5 \
+            "https://iptv-org.github.io/iptv/categories/news.m3u" -o /tmp/news.m3u
+          curl --fail --location --silent --show-error --retry 3 --retry-delay 5 \
+            "https://iptv-org.github.io/iptv/countries/us.m3u" -o /tmp/us.m3u
+
+      - name: Build and validate the combined M3U
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          sources = [
+              ("VIET NAM", Path("/tmp/vn.m3u"), 80),
+              ("SPORTS", Path("/tmp/sports.m3u"), 400),
+              ("NEWS", Path("/tmp/news.m3u"), 900),
+              ("USA", Path("/tmp/us.m3u"), 1200),
+          ]
+
+          all_records = []
+          summary = []
+
+          def add_group_title(extinf: str, label: str) -> str:
+              before, separator, display_name = extinf.partition(",")
+              if not separator:
+                  raise ValueError("EXTINF record has no channel-name separator")
+
+              quoted = re.search(r'\\bgroup-title="([^"]*)"', before, flags=re.IGNORECASE)
+              if quoted:
+                  start, end = quoted.span(1)
+                  before = before[:start] + label + " / " + quoted.group(1) + before[end:]
+              else:
+                  unquoted = re.search(r"\\bgroup-title=([^,\\s]+)", before, flags=re.IGNORECASE)
+                  if unquoted:
+                      start, end = unquoted.span(1)
+                      before = before[:start] + label + " / " + unquoted.group(1) + before[end:]
+                  else:
+                      before += f' group-title="{label}"'
+
+              return before + separator + display_name
+
+          for label, path, minimum in sources:
+              text = path.read_text(encoding="utf-8-sig")
+              lines = text.splitlines()
+              first = next((line.strip() for line in lines if line.strip()), "")
+              if first != "#EXTM3U":
+                  raise SystemExit(f"STOP: {path.name} does not start with #EXTM3U")
+
+              records = []
+              pending = None
+              incomplete = 0
+
+              for raw_line in lines:
+                  line = raw_line.strip()
+                  if line == "#EXTM3U":
+                      continue
+
+                  if line.startswith("#EXTINF:"):
+                      if pending is not None:
+                          incomplete += 1
+                      pending = [raw_line]
+                      continue
+
+                  if pending is None or not line:
+                      continue
+
+                  pending.append(raw_line)
+                  if re.match(r"^https?://", line, flags=re.IGNORECASE):
+                      pending[0] = add_group_title(pending[0], label)
+                      records.append(pending)
+                      pending = None
+
+              if pending is not None:
+                  incomplete += 1
+
+              if len(records) < minimum:
+                  raise SystemExit(
+                      f"STOP: {label} has only {len(records)} complete channels; "
+                      f"minimum safety threshold is {minimum}. Existing playlist was not changed."
+                  )
+
+              summary.append((label, len(records), incomplete))
+              all_records.extend(records)
+
+          if len(all_records) < 2500:
+              raise SystemExit(
+                  f"STOP: combined playlist has only {len(all_records)} channels; "
+                  "minimum safety threshold is 2500. Existing playlist was not changed."
+              )
+
+          playlist = "#EXTM3U\\n" + "\\n".join(
+              "\\n".join(record) for record in all_records
+          ) + "\\n"
+
+          extinf_count = sum(1 for line in playlist.splitlines() if line.startswith("#EXTINF:"))
+          stream_count = sum(
+              1 for line in playlist.splitlines()
+              if re.match(r"^https?://", line.strip(), flags=re.IGNORECASE)
+          )
+          if extinf_count != len(all_records) or stream_count != len(all_records):
+              raise SystemExit("STOP: final M3U validation failed; existing playlist was not changed.")
+
+          output = Path("HTV-Combined-VN-Sports-News-US.m3u")
+          output.write_text(playlist, encoding="utf-8", newline="\\n")
+          size = output.stat().st_size
+          if size < 100_000:
+              raise SystemExit("STOP: final M3U file is unexpectedly small.")
+
+          print("Playlist validation passed:")
+          for label, count, incomplete in summary:
+              print(f"  {label}: {count} complete channels; {incomplete} incomplete records skipped")
+          print(f"  TOTAL: {len(all_records)} channels; {size} bytes")
+          print(f"  Output: {output}")
+
+          PY
+
+      - name: Commit only when the playlist changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          FILE="HTV-Combined-VN-Sports-News-US.m3u"
+
+          if git diff --quiet -- "$FILE"; then
+            echo "No playlist changes detected; no commit is needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$FILE"
+          git commit -m "Auto-update IPTV playlist $(date -u +'%Y-%m-%d')"
+          git push origin HEAD:main

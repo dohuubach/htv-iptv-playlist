@@ -59,12 +59,12 @@ jobs:
               if not separator:
                   raise ValueError("EXTINF record has no channel-name separator")
 
-              quoted = re.search(r'\\bgroup-title="([^"]*)"', before, flags=re.IGNORECASE)
+              quoted = re.search(r'\bgroup-title="([^"]*)"', before, flags=re.IGNORECASE)
               if quoted:
                   start, end = quoted.span(1)
                   before = before[:start] + label + " / " + quoted.group(1) + before[end:]
               else:
-                  unquoted = re.search(r"\\bgroup-title=([^,\\s]+)", before, flags=re.IGNORECASE)
+                  unquoted = re.search(r"\bgroup-title=([^,\s]+)", before, flags=re.IGNORECASE)
                   if unquoted:
                       start, end = unquoted.span(1)
                       before = before[:start] + label + " / " + unquoted.group(1) + before[end:]
@@ -122,9 +122,9 @@ jobs:
                   "minimum safety threshold is 2500. Existing playlist was not changed."
               )
 
-          playlist = "#EXTM3U\\n" + "\\n".join(
-              "\\n".join(record) for record in all_records
-          ) + "\\n"
+          playlist = "#EXTM3U\n" + "\n".join(
+              "\n".join(record) for record in all_records
+          ) + "\n"
 
           extinf_count = sum(1 for line in playlist.splitlines() if line.startswith("#EXTINF:"))
           stream_count = sum(
@@ -135,7 +135,7 @@ jobs:
               raise SystemExit("STOP: final M3U validation failed; existing playlist was not changed.")
 
           output = Path("HTV-Combined-VN-Sports-News-US.m3u")
-          output.write_text(playlist, encoding="utf-8", newline="\\n")
+          output.write_text(playlist, encoding="utf-8", newline="\n")
           size = output.stat().st_size
           if size < 100_000:
               raise SystemExit("STOP: final M3U file is unexpectedly small.")

@@ -110,8 +110,6 @@ https://freem3u.xyz/api/live/play.m3u8?vid=216
 https://liveh12.vtvprime.vn/hls/QPTV/index.m3u8
 #EXTINF:-1 tvg-id="QuangNamTV.vn@SD" tvg-logo="https://i.imgur.com/uWiOoVg.png" group-title="VIET NAM / Undefined",Quang Nam TV
 https://freem3u.xyz/api/live/play.m3u8?vid=80
-#EXTINF:-1 tvg-id="RTMASEAN.my@SD" tvg-logo="https://i.imgur.com/skAiUxg.png" group-title="VIET NAM / News",RTM ASEAN
-https://d25tgymtnqzu8s.cloudfront.net/event/smil:event1/chunklist_b2596000_slENG.m3u8
 #EXTINF:-1 tvg-id="SCTV2.vn@SD" tvg-logo="https://i.imgur.com/8i5DXIg.png" group-title="VIET NAM / Undefined",SCTV2 SD (720p)
 https://vtvgolive-sctvdrm.vtvdigital.vn/manifest/sctv2/master.m3u8
 #EXTINF:-1 tvg-id="SCTV3.vn@SD" tvg-logo="https://i.imgur.com/tfk298I.png" group-title="VIET NAM / Undefined",SCTV3 (720p)
@@ -312,10 +310,19 @@ https://jmp2.uk/plu-685029cda1e091e16ff57fc8.m3u8
 https://video01.soultv.com.br/internacional/internacional/playlist.m3u8
 #EXTINF:-1 tvg-id="CanalShowsport.ar@SD" tvg-logo="https://i.imgur.com/0L9tW3Z.png" group-title="SPORTS / Sports",Canal Showsport (720p)
 https://livestream.lumpentv.com.ar/hls/lumpen.m3u8
+#EXTINF:-1 tvg-id="CanalPlusSport2.pl@SD" tvg-logo="https://i.imgur.com/Aq2hnUj.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML group-title="SPORTS", like Gecko) Chrome/156.0.0.0 Safari/537.36" group-title="Sports",Canal+ Sport 2
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+http://57.129.96.133:888/stream/94/index.m3u8
 #EXTINF:-1 tvg-id="CanalPlusSport2SK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/a/ab/CANAL%2B_SPORT_2.svg/revision/latest?cb=20241028202739" group-title="SPORTS / Sports",Canal+ Sport 2 SK
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport2/live_fullhd?offsetSeconds=0
+#EXTINF:-1 tvg-id="CanalPlusSport3.pl@SD" tvg-logo="https://i.imgur.com/QZwPFa8.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML group-title="SPORTS", like Gecko) Chrome/156.0.0.0 Safari/537.36" group-title="Sports",Canal+ Sport 3
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+http://57.129.96.133:888/stream/93/index.m3u8
 #EXTINF:-1 tvg-id="CanalPlusSport3SK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/4/4c/CANAL%2B_SPORT_3.svg/revision/latest?cb=20241028202810" group-title="SPORTS / Sports",Canal+ Sport 3 SK
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport3/live_fullhd?offsetSeconds=0
+#EXTINF:-1 tvg-id="CanalPlusSport4.pl@SD" tvg-logo="https://i.imgur.com/BNAPYAx.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML group-title="SPORTS", like Gecko) Chrome/156.0.0.0 Safari/537.36" group-title="Sports",Canal+ Sport 4
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+http://57.129.96.133:888/stream/95/index.m3u8
 #EXTINF:-1 tvg-id="CanalPlusSport4SK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/8/82/CANAL%2B_SPORT_4.svg/revision/latest?cb=20241028202820" group-title="SPORTS / Sports",Canal+ Sport 4 SK
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport4/live_fullhd?offsetSeconds=0
 #EXTINF:-1 tvg-id="CanalPlusSport5SK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/3/39/CANAL%2B_SPORT_5.svg/revision/latest?cb=20241028202829" group-title="SPORTS / Sports",Canal+ Sport 5 SK
@@ -326,8 +333,11 @@ http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport6/live_fullhd?o
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport7/live_fullhd?offsetSeconds=0
 #EXTINF:-1 tvg-id="CanalPlusSport8SK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/6/64/Canal%2B_Sport_8.svg/revision/latest?cb=20251106141257" group-title="SPORTS / Sports",Canal+ Sport 8 SK
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport8/live_fullhd?offsetSeconds=0
-#EXTINF:-1 tvg-id="CanalPlusSport.fr@SD" tvg-logo="https://i.imgur.com/EOXnU15.png" group-title="SPORTS / Sports",Canal+ Sport (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="CanalPlusSport.fr@SD" tvg-logo="https://i.imgur.com/EOXnU15.png" group-title="SPORTS / Sports",Canal+ Sport (France) (1080p) [Geo-blocked]
 http://tv.streambox.fr/live/testlivestream/testlivestream/31.m3u8
+#EXTINF:-1 tvg-id="CanalPlusSport.pl@SD" tvg-logo="https://i.imgur.com/E0WTMa2.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML group-title="SPORTS", like Gecko) Chrome/156.0.0.0 Safari/537.36" group-title="Sports",Canal+ Sport (Poland)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36
+http://57.129.96.133:888/stream/92/index.m3u8
 #EXTINF:-1 tvg-id="CanalPlusSportSK.sk@SD" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/2/25/Canal%2B_Sport_2023.svg/revision/latest?cb=20230901182304" group-title="SPORTS / Sports",Canal+ Sport SK
 http://rpprod.hbbtv.cdn.cra.cz:8080/hbbTV/cme-sk-canal-plus-sport/live_fullhd?offsetSeconds=0
 #EXTINF:-1 tvg-id="CazeTV.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png" group-title="SPORTS / Sports",CazeTV (1080p)
@@ -1110,8 +1120,6 @@ https://rightsboosterltd-scl-2-eu.rakuten.wurl.tv/playlist.m3u8
 https://rightsboosterltd-scl-1-eu.rakuten.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-id="StrongmanChampionsLeague.uk@SD" tvg-logo="https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork/30ccc088-dca7-4458-ad5a-328fef06e1ca-width200-quality90.png" group-title="SPORTS / Sports",Strongman Champions League (1080p)
 https://rightsboosterltd-scl-1-us.xumo.wurl.tv/playlist.m3u8
-#EXTINF:-1 tvg-id="SukanRTM.my@SD" tvg-logo="https://i.imgur.com/1pYYSu2.png" group-title="SPORTS / Sports",Sukan RTM (1080p) [Geo-blocked]
-https://d25tgymtnqzu8s.cloudfront.net/smil:sukan/manifest.mpd
 #EXTINF:-1 tvg-id="SuperTennis.it@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/it/thumb/6/6a/SuperTennis_-_Logo_2016.svg/960px-SuperTennis_-_Logo_2016.svg.png" group-title="SPORTS / Sports",SuperTennis (1080p)
 https://live-embed.supertennix.hiway.media/restreamer/supertennix_client/gpu-a-c0-16/restreamer/outgest/aa3673f1-e178-44a9-a947-ef41db73211a/manifest.m3u8
 #EXTINF:-1 tvg-id="SuspilneSport.ua@SD" tvg-logo="https://i.imgur.com/16IhU0M.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML group-title="SPORTS", like Gecko) Chrome/149.0.0.0 Safari/537.36" group-title="Sports",Suspilne. Sport (1080p)
@@ -1657,7 +1665,7 @@ http://ott-7.sevstar.net/belarus24/index.m3u8
 https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus24.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="BeninWebTV.bj@SD" tvg-logo="https://i.imgur.com/CYy4n0N.png" group-title="NEWS / News",Benin Web TV (720p)
 https://stream.beninwebtv.bj/2/live/stream.m3u8
-#EXTINF:-1 tvg-id="BeritaRTM.my@SD" tvg-logo="https://i.imgur.com/1Xzxsgl.png" http-referrer="https://rtm-player.glueapi.io/" group-title="NEWS / News",Berita RTM (1080p) [Geo-blocked]
+#EXTINF:-1 tvg-id="BeritaRTM.my@SD" tvg-logo="https://i.imgur.com/1Xzxsgl.png" http-referrer="https://rtm-player.glueapi.io/" group-title="NEWS / News",Berita RTM (1080p)
 #EXTVLCOPT:http-referrer=https://rtm-player.glueapi.io/
 https://d25tgymtnqzu8s.cloudfront.net/smil:berita/playlist.m3u8?id=5
 #EXTINF:-1 tvg-id="BeritaSatu.id@SD" tvg-logo="https://i.postimg.cc/6pycF7Vx/300px-IDTV.png" http-referrer="https://www.beritasatu.com/beritasatu-live-streaming" group-title="NEWS / News",BeritaSatu (1080p)
@@ -1929,6 +1937,8 @@ https://amg01918-cnnus-amg01918c2-vizio-us-9192.playouts.now.amagi.tv/playlist/a
 https://github.com/thomraider12/canaistvpt/raw/main/m3u8s/cnnpt.m3u8
 #EXTINF:-1 tvg-id="CNNPrimaNews.cz@SD" tvg-logo="https://i.imgur.com/elZyUjX.png" group-title="NEWS / News",CNN Prima News (1080p)
 http://88.212.15.50/live/test_cnn_pirma_news/playlist.m3u8
+#EXTINF:-1 tvg-id="CNNTurk.tr@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/CNN_T%C3%BCrk_logo.svg/960px-CNN_T%C3%BCrk_logo.svg.png" group-title="NEWS / News",CNN Turk (1080p)
+http://85.117.61.84/cnnturk/index.m3u8
 #EXTINF:-1 tvg-id="Conecta2TV.pe@SD" tvg-logo="https://i.imgur.com/W6FDUwt.png" group-title="NEWS / News",Conecta2TV (720p) [Not 24/7]
 https://live.obslivestream.com/conecta2/index.m3u8
 #EXTINF:-1 tvg-id="Contivision.cl@SD" tvg-logo="https://i.imgur.com/Lz2OlKf.png" group-title="NEWS / News",Contivision (720p)
@@ -2014,6 +2024,8 @@ https://dwamdstream110.akamaized.net/hls/live/2017971/dwstream110/master.m3u8
 https://cdn.smartstream.video/smartstream-us/dy365/dy365/playlist.m3u8
 #EXTINF:-1 tvg-id="ELatinAmerica.us@South" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/E%21_Logo_2012.svg/500px-E%21_Logo_2012.svg.png" group-title="NEWS / Entertainment;News",E! Latin America (1080p)
 http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/entertainment.stream/playlist.m3u8
+#EXTINF:-1 tvg-id="ELatinAmerica.us@Colombia" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/E%21_Logo_2012.svg/500px-E%21_Logo_2012.svg.png" group-title="NEWS / Entertainment;News",E! Latin America Colombia (1080p)
+http://38.134.250.110:8000/play/a00x/index.m3u8
 #EXTINF:-1 tvg-id="ELatinAmerica.us@Mexico" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/E%21_Logo_2012.svg/500px-E%21_Logo_2012.svg.png" group-title="NEWS / Entertainment;News",E! Latin America Mexico (720p)
 http://72.1.184.5:8089/play/a05d/index.m3u8
 #EXTINF:-1 tvg-id="etvNewsSport.za@SD" tvg-logo="https://i.imgur.com/lXMzsNM.png" group-title="NEWS / News",e.tv News & Sport (720p)
@@ -2266,7 +2278,7 @@ https://kie2.cdn.i-ua.tv/hlsme/iuatv.m3u8
 #EXTINF:-1 tvg-id="IBC24.in@SD" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_IBC24/images/LOGO_HD/image.png" group-title="NEWS / News",IBC 24 (1080p)
 https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/0bfbd0b9de7f4407949202296560c0fe/index.m3u8
 #EXTINF:-1 tvg-id="IciRDI.ca@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ICI_RDI_logo.svg/960px-ICI_RDI_logo.svg.png" group-title="NEWS / News",Ici RDI (720p)
-https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8
+https://rcavlive.akamaized.net/hls/live/704026/canrdi/master.m3u8
 #EXTINF:-1 tvg-id="ICNDigital.hn@SD" tvg-logo="https://i.imgur.com/UCZVQgj.png" group-title="NEWS / News",ICN Digital
 https://streaming.icndigital.com/live_output/icn_live_stream_1.m3u8
 #EXTINF:-1 tvg-id="ICONETV.bj@SD" tvg-logo="https://i.imgur.com/Aws11wj.jpeg" group-title="NEWS / News",ICONE TV
@@ -3057,8 +3069,6 @@ https://rt-fra.rttv.com/dvr/rtfrance/playlist.m3u8
 https://mumbai-edge.smartplaytv.in/RTIndia/index.m3u8
 #EXTINF:-1 tvg-id="RTHKTV35.hk@HD" tvg-logo="https://i.imgur.com/FQmNKDS.png" group-title="NEWS / News",RTHK TV 35 (1080p) [Geo-blocked]
 https://rthktv35-live.akamaized.net/hls/live/2101643/RTHKTV35/master.m3u8
-#EXTINF:-1 tvg-id="RTMASEAN.my@SD" tvg-logo="https://i.imgur.com/skAiUxg.png" group-title="NEWS / News",RTM ASEAN
-https://d25tgymtnqzu8s.cloudfront.net/event/smil:event1/chunklist_b2596000_slENG.m3u8
 #EXTINF:-1 tvg-id="RTPNoticias.pt@HD" tvg-logo="https://cdn-images.rtp.pt/common/img/channels/logos/color/horizontal/rtpnoticias_2026.png" http-user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0" group-title="NEWS / News",RTP Noticias (720p) [Not 24/7]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0
 https://streaming-live.rtp.pt/livetvhlsDVR/rtpnHDdvr.smil/playlist.m3u8
@@ -5987,8 +5997,8 @@ https://streamer1.nexgen.bz/TELEMUNDO/index.m3u8
 https://nbculocallive.akamaized.net/hls/live/2037098/sandiego/stream1/master.m3u8
 #EXTINF:-1 tvg-id="Telemundo.us@WCAU" tvg-logo="https://imgx.fubo.tv/station_logos/telemundo_c.png" group-title="USA / General",Telemundo WCAU (1080p)
 https://d368vp0qqzvkid.cloudfront.net/11603/88889705/hls/master.m3u8?ads.xumo_channelId=88889705a&ads.xumo_ifaType=&ads.xumo_providerId=3819&ads.xumo_providerName=NBCNPHI
-#EXTINF:-1 tvg-id="Telemundo.us@West" tvg-logo="https://imgx.fubo.tv/station_logos/telemundo_c.png" group-title="USA / General",Telemundo West (2160p)
-http://168.228.44.241:9997/play/a07g/index.m3u8
+#EXTINF:-1 tvg-id="Telemundo.us@West" tvg-logo="https://imgx.fubo.tv/station_logos/telemundo_c.png" group-title="USA / General",Telemundo West (720p)
+http://45.5.117.57:8900/play/a058/index.m3u8
 #EXTINF:-1 tvg-id="Telemundo.us@WTMOCD" tvg-logo="https://imgx.fubo.tv/station_logos/telemundo_c.png" group-title="USA / General",Telemundo WTMO-CD (720p)
 https://d368vp0qqzvkid.cloudfront.net/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_nbc-direct/adcee832-5511-4ed1-bcef-58616c0f530f/4.m3u8
 #EXTINF:-1 tvg-id="TelemundoAlDia.us@HD" tvg-logo="https://images.fubo.tv/channel-config-ui/station-logos/on-white/telemundo_al_dia_1000x1500_2x3_logo_300dpi_vertical_full_color_logo_xumo-3-copy.png" group-title="USA / General",Telemundo Al Dia (720p)
@@ -6162,8 +6172,8 @@ http://23.237.104.106:8080/USA_TRUTV/index.m3u8
 https://turnerlive.warnermediacdn.com/hls/live/2023178/truwest/slate/VIDEO_0_3564000.m3u8
 #EXTINF:-1 tvg-id="TSTV.us@SD" tvg-logo="" group-title="USA / Undefined",TSTV (720p)
 https://reflector.watchtstv.com/hls/livestream.m3u8
-#EXTINF:-1 tvg-id="TUDN.us@SD" tvg-logo="https://i.imgur.com/oT5CAvd.png" group-title="USA / Undefined",TUDN (United States) (1080p)
-http://45.190.13.8/TUDNHD/index.m3u8
+#EXTINF:-1 tvg-id="TUDN.us@SD" tvg-logo="https://i.imgur.com/oT5CAvd.png" group-title="USA / Undefined",TUDN (United States) (1080p) [Geo-blocked]
+https://streaming-live-fcdn.api.prd.univisionnow.com/tudn/tudn.isml/hls/tudn.m3u8
 #EXTINF:-1 tvg-id="TurismoHD.do@HD" tvg-logo="https://gia.tv/streams/pptv/208343.jpg" group-title="USA / Entertainment",Turismo HD (720p)
 https://live20.bozztv.com/giatvplayout7/giatv-208343/playlist.m3u8
 #EXTINF:-1 tvg-id="TUTV.us@SD" tvg-logo="https://i.imgur.com/At0BPeA.png" group-title="USA / Education",TUTV (1080p)
@@ -6285,9 +6295,7 @@ http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/universalcomedy/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/universalcrime/playlist.m3u8
 #EXTINF:-1 tvg-id="Univision.us@East" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_Univision_2019.svg/960px-Logo_Univision_2019.svg.png" group-title="USA / Undefined",Univision (1080p)
-http://38.252.238.18:8000/play/a03e/index.m3u8
-#EXTINF:-1 tvg-id="Univision.us@EastHD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_Univision_2019.svg/960px-Logo_Univision_2019.svg.png" group-title="USA / Undefined",Univision East HD (1080p)
-http://45.190.13.8/UnivisionHD/index.m3u8
+http://190.197.41.183/Univision/index.m3u8
 #EXTINF:-1 tvg-id="Univision.us@KMEXDT" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_Univision_2019.svg/960px-Logo_Univision_2019.svg.png" group-title="USA / Undefined",Univision KMEX-DT (1080p) [Geo-blocked]
 https://streaming-live-fcdn.api.prd.univisionnow.com/kmex/kmex.isml/hls/kmex.m3u8
 #EXTINF:-1 tvg-id="Univision.us@West" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Logo_Univision_2019.svg/960px-Logo_Univision_2019.svg.png" group-title="USA / Undefined",Univision West (1080p) [Geo-blocked]
@@ -6500,5 +6508,3 @@ https://fl1002.bozztv.com/gf-zarintv/index.m3u8
 #EXTINF:-1 tvg-id="ZoomNews.us@SD" tvg-logo="https://t4.ftcdn.net/jpg/03/88/22/21/360_F_388222175_D6PTsMoUyegpPJ63zvkecPsZAttc95mD.jpg" http-referrer="https://zoomnews.info/" group-title="USA / News",Zoom News (720p)
 #EXTVLCOPT:http-referrer=https://zoomnews.info/
 https://live.zoomnews.info/live/Zoom_playlist.m3u8
-#EXTINF:-1 tvg-id="ZTV.us@SD" tvg-logo="https://zplay.cl/img/ztv.png" group-title="USA / General",ZTV (1080p)
-http://45.70.201.81:8000/play/a00u/index.m3u8
